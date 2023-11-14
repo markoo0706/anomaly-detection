@@ -1,0 +1,26 @@
+.smallplot{
+    width: 33vw;
+    border: 0.25vw solid black; 
+}
+.wideplot{
+    width: '90vw';
+    height: '30vh';
+}
+.rowElement{
+    display: flex;
+    height: 30vh;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.container{
+    background-color: black;
+}
+.error_message{
+    width: 13.5vw;
+    height: 30vh;
+    background-color: lightgrey;
+    overflow: scroll;
+    font-size: 18px;
+    border: 0.25vw solid black;
+}
+
