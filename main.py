@@ -46,40 +46,6 @@ error_messages_html = [
         df["錯誤訊息"][0].replace(", ", ",<br>")
     )]
 
-# anmoly_indicator.update_layout(
-#     plot_bgcolor='lightgrey', # 绘图区域背景色
-#     paper_bgcolor='darkgrey'  # 整个图表背景色
-# )
-# xyz_line.update_layout(
-#     plot_bgcolor='lightgrey', # 绘图区域背景色
-#     paper_bgcolor='darkgrey'  # 整个图表背景色
-# )
-# voltage_line.update_layout(
-#     plot_bgcolor='lightgrey', # 绘图区域背景色
-#     paper_bgcolor='darkgrey'  # 整个图表背景色
-# )
-# current_line.update_layout(
-#     plot_bgcolor='lightgrey', # 绘图区域背景色
-#     paper_bgcolor='darkgrey'  # 整个图表背景色
-
-# )
-# power_line.update_layout(
-#     plot_bgcolor='lightgrey', # 绘图区域背景色
-#     paper_bgcolor='darkgrey'  # 整个图表背景色
-# )
-# energy_line.update_layout(
-#     plot_bgcolor='lightgrey', # 绘图区域背景色
-#     paper_bgcolor='darkgrey'  # 整个图表背景色
-
-# )
-# frequency_line.update_layout(
-#     plot_bgcolor='lightgrey', # 绘图区域背景色
-#     paper_bgcolor='darkgrey'  # 整个图表背景色
-# )
-# powerfactor_line.update_layout(
-#     plot_bgcolor='lightgrey', # 绘图区域背景色
-#     paper_bgcolor='darkgrey'  # 整个图表背景色
-# )
 
 app = dash.Dash(__name__)
 app.layout = html.Div(children=[
@@ -88,20 +54,20 @@ app.layout = html.Div(children=[
         dcc.Graph(figure=anmoly_line, id = "anmoly_line", style={'width': '65vw', 'height': '30vh'}),
         html.Div(error_messages_html, id = "error-message-div",  className = "error_message")
     ], className= "rowElement"),
-    # 第一行图表
+
     html.Div([
         dcc.Graph(figure=x_line, className= "smallplot", id = "x_line"),
         dcc.Graph(figure= y_line, className="smallplot", id = "y_line"),
         dcc.Graph(figure= z_line, className="smallplot", id = "z_line")
     ], className= "rowElement"),
 
-    # 第二行图表
+
     html.Div([
         dcc.Graph(figure=voltage_line, className= "smallplot", id = "voltage_line"),
         dcc.Graph(figure=current_line, className= "smallplot", id = "current_line"),
         dcc.Graph(figure=power_line, className= "smallplot", id = "power_line")
     ], className= "rowElement"),
-    # 第三行图表
+
     html.Div([
         dcc.Graph(figure=energy_line, className= "smallplot", id = "energy_line"),
         dcc.Graph(figure=frequency_line, className= "smallplot", id = "frequency_line"),
@@ -109,7 +75,7 @@ app.layout = html.Div(children=[
     ], className= "rowElement"),
     dcc.Interval(
         id='interval-component',
-        interval=1*1000,  # 以毫秒为单位，每1000毫秒触发一次，即每秒触发一次
+        interval=1*1000, 
         n_intervals=0
     )
 ], className= "container")
